@@ -20,7 +20,7 @@ export const HOTEL = {
   whatsappLink: "https://wa.me/33612345678",
   social: {
     twitter: "https://twitter.com",
-    facebook: "https://facebook.com",
+    facebook: "https://www.facebook.com/HotelTuristaTandil/",
     linkedin: "https://linkedin.com",
   },
 }

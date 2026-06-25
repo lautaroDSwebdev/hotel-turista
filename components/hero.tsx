@@ -8,7 +8,7 @@ export function Hero() {
     <section id="top" className="relative -mt-20 flex min-h-screen items-center justify-center overflow-hidden">
       <Image
         src={IMAGES.hero}
-        alt="Verana Hotel & Spa at golden hour, overlooking the sea"
+        alt="Hotel Turista"
         fill
         priority
         className="object-cover"

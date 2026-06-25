@@ -69,10 +69,10 @@ export const LANGUAGES = [
 // ---------------------------------------------------------------------------
 export const CONTENT = {
   hero: {
-    eyebrow: HOTEL.shortLocation,
-    title: HOTEL.tagline,
+    eyebrow: "Tandil, Buenos Aires",
+    title: "Tu descanso ideal en las sierras",
     description:
-      "Ubicado entre los acantilados y el Mediterráneo, Verana combina una elegancia atemporal con una hospitalidad cálida y atenta.",
+      "Ubicado en el corazón de Tandil, Hotel Turista combina una atención cálida y tradicional con la comodidad ideal para descubrir los encantos de la ciudad y sus sierras.",
     primaryCta: { label: "Hacer una Consulta", href: "#consultas" },
     secondaryCta: { label: "Explorar el Hotel", href: "#fotos" },
     scrollLabel: "Desplazar",
@@ -80,100 +80,92 @@ export const CONTENT = {
 
   about: {
     eyebrow: "Sobre Nosotros",
-    title: "Un refugio íntimo moldeado por el mar y las estaciones",
+    title: "Un refugio clásico en una ciudad inolvidable",
     image: IMAGES.about,
-    imageAlt: "El sereno lobby del Verana Hotel",
-    badge: { value: "Un siglo", caption: "de hospitalidad junto al mar" },
+    imageAlt: "El cálido lobby de Hotel Turista",
+    badge: { value: "Tradición", caption: "en hospitalidad tandilense" },
     paragraphs: [
-      "Durante casi cien años, Verana ha recibido a viajeros que buscan un lujo tranquilo a lo largo de la Costa Azul. Nuestro hotel de gestión familiar combina el carácter de una villa histórica con las comodidades de un santuario moderno.",
-      "Cada habitación enmarca la luz del Mediterráneo, cada comida celebra los productos de la región y cada huésped es atendido como si fuera de la familia. Este es un lugar para bajar el ritmo, respirar hondo y sentirse completamente en casa.",
+      "Hotel Turista ha recibido a viajeros, familias y aventureros que buscan una estadía cómoda y relajada en Tandil. Nuestro hotel destaca por brindar el carácter de la hospitalidad local combinado con una ubicación inmejorable.",
+      "Cada rincón está pensado para tu descanso tras un día recorriendo los cerros. Disfruta de la gastronomía regional, la calidez de nuestro equipo y siéntete completamente como en casa durante tu visita."
     ],
     stats: [
-      { value: "1924", label: "Establecido" },
-      { value: "48", label: "Habitaciones y Suites" },
-      { value: "5★", label: "Calificación de Huéspedes" },
+      { value: "Tandil", label: "Ubicación Céntrica" },
+      { value: "Cómodas", label: "Habitaciones" },
+      { value: "Excelente", label: "Atención" },
     ],
   },
 
   amenities: {
     eyebrow: "Servicios y Comodidades",
-    title: "Todo lo que necesita para relajarse, cuidadosamente pensado",
+    title: "Todo lo que necesitas para tu estadía, pensado para vos",
     featured: [
       {
-        title: "El Spa en Verana",
+        title: "Desayuno Tradicional",
         description:
-          "Un tranquilo santuario de bienestar que ofrece masajes, tratamientos faciales y termales con vistas a los jardines.",
-        image: IMAGES.amenitySpa,
-      },
-      {
-        title: "Alta Cocina Costera",
-        description:
-          "Cocina mediterránea de temporada elaborada con productos locales, maridada con una bodega galardonada.",
+          "Comienza el día con panificados artesanales, infusiones calientes y productos locales antes de salir a recorrer las sierras.",
         image: IMAGES.amenityDining,
       },
       {
-        title: "Piscina Infinita con Vista al Mar",
+        title: "Atención Familiar y Asesoramiento",
         description:
-          "Una piscina infinita climatizada con tumbonas y vistas ininterrumpidas al mar Mediterráneo.",
+          "Nuestro equipo te guiará con los mejores mapas, paseos y recomendaciones gastronómicas de la región.",
+        image: IMAGES.amenitySpa,
+      },
+      {
+        title: "Espacios de Descanso",
+        description:
+          "Ambientes cálidos y calefaccionados, ideales para relajarse luego de una caminata por el Cerro El Centinela o el Calvario.",
         image: IMAGES.amenityPool,
       },
     ],
-    // `icon` is a key resolved to a lucide icon inside the component
     services: [
-      { icon: "concierge", label: "Conserjería 24h" },
-      { icon: "wifi", label: "Wi-Fi de Alta Velocidad" },
-      { icon: "car", label: "Estacionamiento con Aparcacoches y Traslados" },
-      { icon: "waves", label: "Acceso a Playa Privada" },
-      { icon: "dining", label: "Servicio a la Habitación" },
-      { icon: "sparkles", label: "Limpieza Diaria" },
+      { icon: "concierge", label: "Recepción y Atención" },
+      { icon: "wifi", label: "Wi-Fi Libre en todo el Hotel" },
+      { icon: "car", label: "Información Turística" },
+      { icon: "clock", label: "Atención de Reservas de 8 a 22hs" },
+      { icon: "dining", label: "Desayuno Incluido" },
+      { icon: "sparkles", label: "Servicio de Limpieza Diario" },
     ],
   },
 
   photos: {
     eyebrow: "Fotos",
-    title: "Un vistazo a la vida en Verana",
-    // `span` controls the bento-grid sizing for each tile
+    title: "Un vistazo a la experiencia en Hotel Turista",
     gallery: [
-      { src: IMAGES.gallerySuite, alt: "Suite con vista al mar y cama king-size", span: "md:col-span-2 md:row-span-2" },
-      { src: IMAGES.galleryTerrace, alt: "Terraza con guirnaldas de luces al atardecer", span: "" },
-      { src: IMAGES.galleryBath, alt: "Baño de mármol con bañera independiente", span: "" },
-      { src: IMAGES.galleryGarden, alt: "Exuberante patio ajardinado", span: "md:col-span-2" },
-      { src: IMAGES.galleryBreakfast, alt: "Desayuno en una terraza soleada", span: "" },
-      { src: IMAGES.amenityPool, alt: "Piscina infinita con vistas al mar", span: "" },
+      { src: IMAGES.gallerySuite, alt: "Habitación cómoda matrimonial", span: "md:col-span-2 md:row-span-2" },
+      { src: IMAGES.galleryTerrace, alt: "Área de comedor e interior del hotel", span: "" },
+      { src: IMAGES.galleryBath, alt: "Baño impecable y equipado", span: "" },
+      { src: IMAGES.galleryGarden, alt: "Fachada e ingresos al hotel", span: "md:col-span-2" },
+      { src: IMAGES.galleryBreakfast, alt: "Desayuno servido por la mañana", span: "" },
+      { src: IMAGES.amenityPool, alt: "Detalles y calidez de nuestras instalaciones", span: "" },
     ],
   },
 
   location: {
     eyebrow: "Ubicación",
-    title: "Encuéntrenos en la costa de la Riviera",
+    title: "Encuéntranos en el centro de Tandil",
     description:
-      "A solo veinte minutos de Niza por la carretera costera, Verana se encuentra escondido entre los acantilados de Èze y el resplandeciente Mediterráneo.",
-    mapSrc: "https://maps.google.com/maps?q=Eze-sur-Mer%20France&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    mapTitle: "Mapa que muestra la ubicación de Verana Hotel & Spa",
-    // `icon` is a key resolved to a lucide icon inside the component
+      "Ubicado estratégicamente sobre la calle 14 de Julio, nuestro hotel te permite acceder fácilmente tanto al centro comercial y gastronómico como a los principales puntos turísticos de la ciudad.",
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.3405992391013!2d-59.13694439999999!3d-37.3344444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911f9b19e0df87%3A0x47c27265e00172ae!2sHotel%20Turista!5e0!3m2!1ses-419!2sar!4v1782344729111!5m2!1ses-419!2sar",
+    mapTitle: "Mapa que muestra la ubicación de Hotel Turista Tandil",
     details: [
-      { icon: "pin", label: "Dirección", value: HOTEL.location },
-      { icon: "mail", label: "Correo electrónico", value: HOTEL.email, href: `mailto:${HOTEL.email}` },
-      {
-        icon: "phone",
-        label: "Recepción",
-        value: HOTEL.phone,
-        href: `tel:${HOTEL.phone.replace(/\s/g, "")}`,
-      },
-      { icon: "clock", label: "Entrada / Salida", value: "Desde las 3:00 PM / Hasta las 11:00 AM" },
+      { icon: "pin", label: "Dirección", value: "14 de Julio 60 Tandil, Buenos Aires." },
+      { icon: "mail", label: "Correo electrónico", value: "hotelturistatandil@gmail.com", href: "mailto:hotelturistatandil@gmail.com" },
+      { icon: "phone", label: "Recepción", value: "2494 110891", href: "tel:2494110891" },
+      { icon: "clock", label: "Horarios de reserva", value: "De 8:00 a 22:00 hs" },
     ],
   },
 
   guestbook: {
     eyebrow: "Libro de Visitas",
     title: "Palabras de nuestros huéspedes",
-    subtitle: "Comparta un recuerdo de su estancia o lea la experiencia de otros huéspedes.",
+    subtitle: "Comparte un recuerdo de tu estadía o lee la experiencia de otros visitantes.",
     form: {
-      heading: "Firmar el libro de visitas",
-      namePlaceholder: "Su nombre",
-      locationPlaceholder: "De dónde nos visita",
-      ratingLabel: "Su calificación",
-      messagePlaceholder: "Cuéntenos sobre su estancia…",
+      heading: "Firma el libro de visitas",
+      namePlaceholder: "Tu nombre",
+      locationPlaceholder: "De dónde nos visitas",
+      ratingLabel: "Tu calificación",
+      messagePlaceholder: "Cuéntanos sobre tu estadía…",
       submitLabel: "Añadir al Libro de Visitas",
     },
     entries: [
@@ -182,55 +174,55 @@ export const CONTENT = {
         location: "París, Francia",
         rating: 5,
         message:
-          "Una estancia inolvidable. La suite con vista al mar era impresionante y el personal se anticipó a cada una de nuestras necesidades. Ya estamos planeando nuestro regreso.",
+          "Una estadía inolvidable. La atención fue muy atenta y cálida, y el personal nos ayudó a organizar todas las excursiones por las sierras. Ya estamos planeando nuestro regreso.",
       },
       {
         name: "James Whitfield",
         location: "Londres, Reino Unido",
         rating: 5,
         message:
-          "Solo el spa ya vale el viaje. Si a eso le añades una cocina increíble y la hospitalidad más cálida, tienes un lugar realmente especial.",
+          "La ubicación es excelente para caminar al centro. La hospitalidad es de lo más cálida y las medialunas del desayuno son increíbles. Un lugar realmente especial.",
       },
       {
         name: "Sofia Marchetti",
         location: "Milán, Italia",
         rating: 4,
         message:
-          "Un hotel sereno, hermoso y con encanto en cada rincón. El desayuno en la terraza con vistas al mar fue lo mejor de cada mañana.",
+          "Un hotel sereno, muy limpio y con encanto. El desayuno y la atención de la recepción fue lo mejor de cada mañana para arrancar el día en Tandil.",
       },
     ],
   },
 
   inquiries: {
     eyebrow: "Consultas",
-    title: "Comience a planificar su estancia",
+    title: "Comienza a planificar tu estadía",
     description:
-      "Envíenos sus fechas y preferencias; nuestro equipo de reservas le responderá en un plazo de 24 horas con la disponibilidad y una oferta a su medida.",
-    whatsappPrompt: "¿Prefiere chatear directamente?",
-    whatsappCta: "Escríbanos por WhatsApp",
+      "Envíanos tus fechas y preferencias; nuestro equipo te responderá a la brevedad para confirmarte la disponibilidad y ofrecerte una propuesta a tu medida.",
+    whatsappPrompt: "¿Prefieres chatear directamente?",
+    whatsappCta: "Escríbenos por WhatsApp",
     emailPrefix: "O por correo electrónico",
     form: {
       nameLabel: "Nombre completo",
-      namePlaceholder: "Juana de Arco",
+      namePlaceholder: "Juan Pérez",
       emailLabel: "Correo electrónico",
-      emailPlaceholder: "juana@ejemplo.com",
-      checkInLabel: "Entrada",
-      checkOutLabel: "Salida",
+      emailPlaceholder: "juan@ejemplo.com",
+      checkInLabel: "Entrada (Check-in)",
+      checkOutLabel: "Salida (Check-out)",
       guestsLabel: "Huéspedes",
       messageLabel: "Mensaje",
-      messagePlaceholder: "Cuéntenos sobre su viaje o cualquier petición especial…",
+      messagePlaceholder: "Cuéntanos sobre tu viaje o cualquier petición especial…",
       submitLabel: "Enviar Consulta",
     },
     success: {
       heading: "Muchas gracias",
-      body: "Hemos recibido su consulta. Nuestro equipo se pondrá en contacto con usted en breve para ayudarle a organizar su estancia en Verana.",
+      body: "Hemos recibido tu consulta. Nuestro equipo se pondrá en contacto contigo en breve para ayudarte a organizar tu estadía en Hotel Turista Tandil.",
       again: "Enviar otra consulta",
     },
   },
 
   footer: {
     description:
-      "Un refugio costero boutique en la Costa Azul, que ofrece elegancia atemporal y una cálida hospitalidad desde 1924.",
+      "Un alojamiento cálido y confortable en el corazón de Tandil, ofreciendo la mejor atención y hospitalidad para que te sientas como en casa.",
     exploreHeading: "Explorar",
     contactHeading: "Contacto",
     rights: "Todos los derechos reservados.",

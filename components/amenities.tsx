@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import {
   BedSingle,
@@ -14,7 +14,11 @@ import {
   Users,
   X,
 } from "lucide-react"; // O la librería de iconos que uses
-import onKey from "@/public/hooks/onKey";
+import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import onKey from "@/app/hooks/onKey";
 
 const FEATURED = [
   {
@@ -49,10 +53,33 @@ const SERVICES = [
 ];
 
 export function Amenities() {
-
   const { active, setActive } = onKey();
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useEffect(() => {
+    gsap.from(".div_comodidades ", {
+      scrollTrigger: {
+        trigger: ".div_comodidades ",
+        // start: 50
+        toggleActions: "restart",
+      },
+      opacity: 0,
+      x: -50,
+      duration: 2,
+    });
+    gsap.to(".div_comodidades ", {
+      scrollTrigger: {
+        trigger: ".div_comodidades ",
+        // start: 50
+        toggleActions: "play",
+      },
+      opacity: 1,
+      x: 0,
+      duration: 2,
+    });
+  }, []);
   return (
-    <section id="servicio-y-comodidades" className="bg-secondary py-24">
+    <section id="servicio-y-comodidades" className="bg-secondary py-24 div_comodidades">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">
@@ -71,8 +98,9 @@ export function Amenities() {
               className="group overflow-hidden rounded-sm border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
             >
               <div
-              onClick={() => setActive(e)}
-              className="relative aspect-[3/2] overflow-hidden">
+                onClick={() => setActive(e)}
+                className="relative aspect-[3/2] overflow-hidden"
+              >
                 <Image
                   src={item.src}
                   alt={item.title}

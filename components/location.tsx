@@ -1,31 +1,52 @@
-import { HOTEL } from "@/components/site-data"
-import { MapPin, Mail, Phone, Clock } from "lucide-react" // Asegúrate de importar o usar tu icono para WhatsApp si lo prefieres
+"use client";
+import { langCotext } from "@/app/context/LangContext";
+import { MapPin, Mail, Phone, Clock } from "lucide-react"; // Asegúrate de importar o usar tu icono para WhatsApp si lo prefieres
+import { useContext } from "react";
 
 const DETAILS = [
-  { icon: MapPin, label: "Dirección", value: "14 de Julio 60 Tandil, Buenos Aires." },
-  { icon: Mail, label: "Email", value: "hotelturistatandil@gmail.com", href: "mailto:hotelturistatandil@gmail.com" },
-  { icon: Phone, label: "Recepción", value: "2494 110891", href: "tel:2494110891" },
-  { 
+  {
+    icon: MapPin,
+    label: "Dirección",
+    value: "14 de Julio 60 Tandil, Buenos Aires.",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "hotelturistatandil@gmail.com",
+    href: "mailto:hotelturistatandil@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Recepción",
+    value: "2494 110891",
+    href: "tel:2494110891",
+  },
+  {
     icon: Phone, // Puedes cambiarlo por un icono de WhatsApp si lo tienes disponible (ej. MessageSquare o un SVG)
-    label: "WhatsApp", 
-    value: "2494 331998", 
-    href: "https://wa.me/5492494331998" // Formato internacional para Argentina para abrir chat directo
+    label: "WhatsApp",
+    value: "2494 331998",
+    href: "https://wa.me/5492494331998", // Formato internacional para Argentina para abrir chat directo
   },
   { icon: Clock, label: "Horarios de reserva", value: "De 8:00 a 22:00 hs" },
-]
-
+];
 export function Location() {
+  const info = useContext(langCotext);
+
+  if (!info) return null;
+  const { title1, title, description } = info.data.CONTENT.location;
   return (
     <section id="ubicacion" className="bg-secondary py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">Ubicación</p>
+            <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">
+              {title}
+            </p>
             <h2 className="text-balance font-heading text-4xl leading-tight text-foreground md:text-5xl">
-              Encuéntranos en Tandil
+              {title1}
             </h2>
             <p className="mt-6 max-w-md text-pretty leading-relaxed text-muted-foreground">
-              Te esperamos en nuestra céntrica y cómoda ubicación para ofrecerte la mejor atención durante tu estadía.
+              {description}
             </p>
 
             <ul className="mt-10 space-y-6">
@@ -35,9 +56,20 @@ export function Location() {
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{label}</p>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {label}
+                    </p>
                     {href ? (
-                      <a href={href} target={href.startsWith('http') ? "_blank" : undefined} rel={href.startsWith('http') ? "noopener noreferrer" : undefined} className="mt-1 block text-foreground transition-colors hover:text-primary">
+                      <a
+                        href={href}
+                        target={href.startsWith("http") ? "_blank" : undefined}
+                        rel={
+                          href.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
+                        className="mt-1 block text-foreground transition-colors hover:text-primary"
+                      >
                         {value}
                       </a>
                     ) : (
@@ -61,5 +93,5 @@ export function Location() {
         </div>
       </div>
     </section>
-  )
+  );
 }

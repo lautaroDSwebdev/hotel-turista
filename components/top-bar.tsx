@@ -1,8 +1,16 @@
 import { MapPin, Mail, Phone } from "lucide-react"
 import { Logo } from "@/components/logo"
-import { HOTEL } from "@/components/site-data"
+import { useContext } from "react";
+import { langCotext } from "@/app/context/LangContext";
 
 export function TopBar() {
+
+  const info = useContext(langCotext);
+
+  if (!info) return null;
+
+  const {HOTEL} = info.data
+
   return (
     <div className="hidden bg-primary text-primary-foreground md:block">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-2.5 text-sm">

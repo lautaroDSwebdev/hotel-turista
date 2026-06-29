@@ -199,3 +199,23 @@ transition: transform 0.25s ease-out;
 transform: scaleX(1);
 transform-origin: bottom left;
 }
+
+.g-scroll-animated-size-guest {
+  view-timeline-name: --arrow;
+  view-timeline-axis: block;
+  animation-timeline: --arrow;
+  animation-name: animacion_scroll-cards;
+  animation-range: entry 63% cover 30%;
+  animation-fill-mode: both;
+}
+
+@keyframes animacion_scroll-cards {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}

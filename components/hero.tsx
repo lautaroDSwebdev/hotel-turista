@@ -1,11 +1,55 @@
-import Image from "next/image"
-import { CONTENT, IMAGES } from "@/components/site-data"
+"use client"
+import Image from "next/image";
+// import { IMAGES } from "@/app/mock/site-data";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { useContext, useEffect } from "react";
+import { langCotext } from "@/app/context/LangContext";
+import { IMAGES } from "@/app/mock/dataIMG";
 
 export function Hero() {
-  const { hero } = CONTENT
+
+
+  const info = useContext(langCotext);
+
+  if (!info) return null;
+  const hero = info?.data.CONTENT.hero;
+
+
+
+
+  
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useEffect(() => {
+    gsap.from(".hero-info  ", {
+      scrollTrigger: {
+        trigger: ".hero-info  ",
+        // start: 50
+        toggleActions: "restart",
+      },
+      opacity: 0,
+      y: -50,
+      duration: 1,
+    });
+    gsap.to(".hero-info  ", {
+      scrollTrigger: {
+        trigger: ".hero-info  ",
+        // start: 50
+        toggleActions: "play",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+    });
+  }, []);
 
   return (
-    <section id="top" className="relative -mt-20 flex min-h-screen items-center justify-center overflow-hidden">
+    <section
+      id="top"
+      className="relative -mt-20 flex min-h-screen items-center justify-center overflow-hidden"
+    >
       <Image
         src={IMAGES.hero}
         alt="Hotel Turista"
@@ -16,8 +60,10 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center text-background">
-        <p className="mb-5 text-xs uppercase tracking-[0.4em] text-background/80">{hero.eyebrow}</p>
+      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center text-background hero-info">
+        <p className="mb-5 text-xs uppercase tracking-[0.4em] text-background/80">
+          {hero.eyebrow}
+        </p>
         <h1 className="text-balance font-heading text-5xl leading-tight sm:text-6xl md:text-7xl">
           {hero.title}
         </h1>
@@ -41,8 +87,10 @@ export function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-background/70">
-        <span className="text-[0.625rem] uppercase tracking-[0.3em]">{hero.scrollLabel}</span>
+        <span className="text-[0.625rem] uppercase tracking-[0.3em]">
+          {hero.scrollLabel}
+        </span>
       </div>
     </section>
-  )
+  );
 }

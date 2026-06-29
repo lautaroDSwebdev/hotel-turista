@@ -130,9 +130,9 @@ export function Guestbook() {
           </form>
 
           {/* Comentarios */}
-          <ul className="space-y-6">
+          <ul className="space-y-6 ">
             {entries.map((entry, i) => (
-              <li key={`${entry.name}-${i}`} className="relative rounded-sm border border-border bg-card p-6 shadow-sm">
+              <li key={`${entry.name}-${i}`} className="relative rounded-sm border border-border bg-card p-6 shadow-sm g-scroll-animated-size-guest">
                 <Quote className="absolute right-6 top-6 size-8 text-accent/30" aria-hidden="true" />
                 <Stars value={entry.rating} />
                 <p className="mt-4 text-pretty leading-relaxed text-foreground/90">{entry.message}</p>

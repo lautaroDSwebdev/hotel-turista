@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown, Globe } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { LANGUAGES } from "@/components/site-data"
+import { LANGUAGES } from "@/app/mock/site-data"
 
 // NOTE: This switcher is purely visual/dynamic. Selecting a language only
 // updates the highlighted option — there is no real translation behind it.

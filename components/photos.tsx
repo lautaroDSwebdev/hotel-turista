@@ -3,7 +3,10 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
-import onKey from "@/public/hooks/onKey"
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/all"
+import onKey from "@/app/hooks/onKey"
 
 const PHOTOS = [
   { src: "/images/gallery-suite.png", alt: "Sea-view suite with king bed", span: "md:col-span-2 md:row-span-2" },
@@ -16,17 +19,43 @@ const PHOTOS = [
 
 export function Photos() {
 const {active, setActive } =onKey()
+
+
+ gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useEffect(() => {
+    gsap.from(".div_fotos ", {
+      scrollTrigger: {
+        trigger: ".div_fotos ",
+        // start: 50
+        toggleActions: "restart",
+      },
+      opacity: 0,
+      x: 100,
+      duration: 2,
+    });
+    gsap.to(".div_fotos ", {
+      scrollTrigger: {
+        trigger: ".div_fotos ",
+        // start: 50
+        toggleActions: "play",
+      },
+      opacity: 1,
+      x: 0,
+      duration: 2,
+    });
+  }, []);
   return (
-    <section id="fotos" className="bg-background py-24">
+    <section id="fotos" className="bg-background py-24 div_fotos">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">Fotos</p>
           <h2 className="text-balance font-heading text-4xl leading-tight text-foreground md:text-5xl">
-            A glimpse of life at Verana
+            Fotos del Hotel Turista
           </h2>
         </div>
 
-        <div className="mt-14 grid auto-rows-[200px] grid-cols-2 gap-4 md:grid-cols-4 md:auto-rows-[220px]">
+        <div className="mt-14 grid auto-rows-[200px] grid-cols-2 gap-4 md:grid-cols-4 md:auto-rows-[220px] ">
           {PHOTOS.map((photo, i) => (
             <button
               key={photo.src}

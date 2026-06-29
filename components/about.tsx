@@ -1,8 +1,43 @@
-import Image from "next/image"
-import { CONTENT } from "@/components/site-data"
+"use client";
+import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import { useContext, useEffect } from "react";
+import gsap from "gsap";
+import { langCotext } from "@/app/context/LangContext";
 
 export function About() {
-  const { about } = CONTENT
+  const info = useContext(langCotext);
+
+  if (!info) return null;
+  const about = info?.data.CONTENT.about;
+  const data_nav = info?.data.NAV_LINKS;
+
+  // const { about } = hotel;
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useEffect(() => {
+    gsap.from(".div_info ", {
+      scrollTrigger: {
+        trigger: ".div_info ",
+        // start: 50
+        toggleActions: "restart",
+      },
+      opacity: 0,
+      y: -50,
+      duration: 2,
+    });
+    gsap.to(".div_info ", {
+      scrollTrigger: {
+        trigger: ".div_info ",
+        // start: 50
+        toggleActions: "play",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 2,
+    });
+  }, []);
 
   return (
     <section id="sobre-nosotros" className="bg-background py-24">
@@ -23,8 +58,10 @@ export function About() {
           </div>
         </div>
 
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">{about.eyebrow}</p>
+        <div className="div_info">
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">
+            {about.eyebrow}
+          </p>
           <h2 className="text-balance font-heading text-4xl leading-tight text-foreground md:text-5xl">
             {about.title}
           </h2>
@@ -37,13 +74,17 @@ export function About() {
           <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {about.stats.map((stat) => (
               <div key={stat.label}>
-                <dt className="font-heading text-3xl text-primary">{stat.value}</dt>
-                <dd className="mt-1 text-sm text-muted-foreground">{stat.label}</dd>
+                <dt className="font-heading text-3xl text-primary">
+                  {stat.value}
+                </dt>
+                <dd className="mt-1 text-sm text-muted-foreground">
+                  {stat.label}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
     </section>
-  )
+  );
 }

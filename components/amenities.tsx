@@ -15,9 +15,9 @@ import {
   X,
 } from "lucide-react"; // O la librería de iconos que uses
 import { useEffect } from "react";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
+// import { ScrollTrigger } from "gsap/all";
+// import gsap from "gsap";
 import onKey from "@/app/hooks/onKey";
 
 const FEATURED = [
@@ -54,7 +54,7 @@ const SERVICES = [
 
 export function Amenities() {
   const { active, setActive } = onKey();
-  gsap.registerPlugin(useGSAP, ScrollTrigger);
+  // gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useEffect(() => {
     gsap.from(".div_comodidades ", {

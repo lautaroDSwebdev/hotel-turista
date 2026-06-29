@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
-import gsap from "gsap"
-import { useGSAP } from "@gsap/react"
-import { ScrollTrigger } from "gsap/all"
+// import gsap from "gsap"
+// import { useGSAP } from "@gsap/react"
+// import { ScrollTrigger } from "gsap/all"
 import onKey from "@/app/hooks/onKey"
 
 const PHOTOS = [
@@ -21,30 +21,30 @@ export function Photos() {
 const {active, setActive } =onKey()
 
 
- gsap.registerPlugin(useGSAP, ScrollTrigger);
+//  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-  useEffect(() => {
-    gsap.from(".div_fotos ", {
-      scrollTrigger: {
-        trigger: ".div_fotos ",
-        // start: 50
-        toggleActions: "restart",
-      },
-      opacity: 0,
-      x: 100,
-      duration: 2,
-    });
-    gsap.to(".div_fotos ", {
-      scrollTrigger: {
-        trigger: ".div_fotos ",
-        // start: 50
-        toggleActions: "play",
-      },
-      opacity: 1,
-      x: 0,
-      duration: 2,
-    });
-  }, []);
+//   useEffect(() => {
+//     gsap.from(".div_fotos ", {
+//       scrollTrigger: {
+//         trigger: ".div_fotos ",
+//         // start: 50
+//         toggleActions: "restart",
+//       },
+//       opacity: 0,
+//       x: 100,
+//       duration: 2,
+//     });
+//     gsap.to(".div_fotos ", {
+//       scrollTrigger: {
+//         trigger: ".div_fotos ",
+//         // start: 50
+//         toggleActions: "play",
+//       },
+//       opacity: 1,
+//       x: 0,
+//       duration: 2,
+//     });
+//   }, []);
   return (
     <section id="fotos" className="bg-background py-24 div_fotos">
       <div className="mx-auto max-w-7xl px-6">

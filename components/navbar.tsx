@@ -8,9 +8,6 @@ import {
   FacebookIcon,
   LinkedinIcon,
 } from "@/components/social-icons";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
 import { langCotext } from "@/app/context/LangContext";
 import { dataES } from "@/app/mock/dataEs";
 import useNavigationHover from "@/app/hooks/useNavHover";

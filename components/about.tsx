@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-// import { useGSAP } from "@gsap/react";
-// import { ScrollTrigger } from "gsap/all";
-// import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
 import { useContext, useEffect } from "react";
 import { langCotext } from "@/app/context/LangContext";
 
@@ -14,30 +14,30 @@ export function About() {
   const data_nav = info?.data.NAV_LINKS;
 
   // const { about } = hotel;
-  // gsap.registerPlugin(useGSAP, ScrollTrigger);
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-  // useEffect(() => {
-  //   gsap.from(".div_info ", {
-  //     scrollTrigger: {
-  //       trigger: ".div_info ",
-  //       // start: 50
-  //       toggleActions: "restart",
-  //     },
-  //     opacity: 0,
-  //     y: -50,
-  //     duration: 2,
-  //   });
-  //   gsap.to(".div_info ", {
-  //     scrollTrigger: {
-  //       trigger: ".div_info ",
-  //       // start: 50
-  //       toggleActions: "play",
-  //     },
-  //     opacity: 1,
-  //     y: 0,
-  //     duration: 2,
-  //   });
-  // }, []);
+  useEffect(() => {
+    gsap.from(".div_info ", {
+      scrollTrigger: {
+        trigger: ".div_info ",
+        // start: 50
+        toggleActions: "restart",
+      },
+      opacity: 0,
+      y: -50,
+      duration: 2,
+    });
+    gsap.to(".div_info ", {
+      scrollTrigger: {
+        trigger: ".div_info ",
+        // start: 50
+        toggleActions: "play",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 2,
+    });
+  }, []);
 
   return (
     <section id="sobre-nosotros" className="bg-background py-24">

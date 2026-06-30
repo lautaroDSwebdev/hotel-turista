@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import { useContext, useEffect } from "react";
-import { langCotext } from "@/app/context/LangContext";
+import { langCotext } from "./context/LangContext";
 
 export function About() {
   const info = useContext(langCotext);

@@ -6,7 +6,7 @@ import { X } from "lucide-react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
-import onKey from "@/app/hooks/onKey"
+import onKey from "./hooks/onKey"
 
 const PHOTOS = [
   { src: "/images/gallery-suite.png", alt: "Sea-view suite with king bed", span: "md:col-span-2 md:row-span-2" },

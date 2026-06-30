@@ -8,9 +8,9 @@ import {
   FacebookIcon,
   LinkedinIcon,
 } from "@/components/social-icons";
-import { langCotext } from "@/app/context/LangContext";
-import { dataES } from "@/app/mock/dataEs";
-import useNavigationHover from "@/app/hooks/useNavHover";
+import { langCotext } from "./context/LangContext";
+import { dataES } from "./mock/dataEs";
+import useNavigationHover from "./hooks/useNavHover";
 
 const SOCIALS = [
   { label: "Twitter", href: dataES.HOTEL.social.twitter, Icon: TwitterIcon },

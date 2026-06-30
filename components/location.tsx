@@ -1,7 +1,7 @@
 "use client";
-import { langCotext } from "@/app/context/LangContext";
 import { MapPin, Mail, Phone, Clock } from "lucide-react"; // Asegúrate de importar o usar tu icono para WhatsApp si lo prefieres
 import { useContext } from "react";
+import { langCotext } from "./context/LangContext";
 
 const DETAILS = [
   {

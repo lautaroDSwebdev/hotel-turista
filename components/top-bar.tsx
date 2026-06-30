@@ -1,7 +1,7 @@
 import { MapPin, Mail, Phone } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { useContext } from "react";
-import { langCotext } from "@/app/context/LangContext";
+import { langCotext } from "./context/LangContext";
 
 export function TopBar() {
 

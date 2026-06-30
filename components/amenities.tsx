@@ -18,7 +18,7 @@ import { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-import onKey from "@/app/hooks/onKey";
+import onKey from "./hooks/onKey";
 
 const FEATURED = [
   {

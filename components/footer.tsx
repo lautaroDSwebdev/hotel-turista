@@ -1,5 +1,4 @@
 "use client"
-import { langCotext } from "@/app/context/LangContext";
 import { Logo } from "@/components/logo";
 import {
   TwitterIcon,
@@ -9,6 +8,7 @@ import {
 
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import { useContext } from "react";
+import { langCotext } from "./context/LangContext";
 
 
 export function Footer() {

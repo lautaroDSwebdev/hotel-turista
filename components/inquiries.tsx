@@ -2,7 +2,7 @@
 
 import { useContext, useState } from "react";
 import { Check, MessageCircle } from "lucide-react";
-import { langCotext } from "@/app/context/LangContext";
+import { langCotext } from "./context/LangContext";
 
 export function Inquiries() {
   const info = useContext(langCotext);

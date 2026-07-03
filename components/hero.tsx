@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { useContext, useEffect } from "react";
 import { langCotext } from "./context/LangContext";
+import { IMAGES } from "./mock/dataIMG";
 
 export function Hero() {
 

@@ -1,8 +1,10 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Los imports de librerías externas sí van con @import, pero van ABAJO de las directivas de Tailwind */
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-
-@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-heading: var(--font-playfair), 'Georgia', serif;

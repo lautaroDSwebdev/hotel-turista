@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Los imports de librerías externas sí van con @import, pero van ABAJO de las directivas de Tailwind */
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
+
+/* ... Aquí abajo deberían estar las variables :root de Shadcn (--background, --border, etc.) si es que las tienes ahí ... */
 
 @theme inline {
   --font-heading: var(--font-playfair), 'Georgia', serif;

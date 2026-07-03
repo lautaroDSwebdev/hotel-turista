@@ -1,12 +1,13 @@
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
-
-/* ... Aquí abajo deberían estar las variables :root de Shadcn (--background, --border, etc.) si es que las tienes ahí ... */
-
+/* Tus variables :root de Shadcn (--background, --border, etc.) 
+  y cualquier otra clase que tengas van de aquí para abajo... 
+*/
 @theme inline {
   --font-heading: var(--font-playfair), 'Georgia', serif;
   --font-serif: var(--font-playfair), 'Georgia', serif;

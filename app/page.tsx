@@ -17,10 +17,12 @@ export default function Page() {
       <main>
         <Hero />
         <About />
+        {/* servicios */}
         <Amenities />
         <Photos />
         <Location />
         <Guestbook />
+        {/* consultas */}
         <Inquiries />
       </main>
       <Footer />

@@ -2,7 +2,20 @@
 //  VERANA HOTEL — SINGLE SOURCE OF TRUTH (ESPAÑOL)
 //  All text, contact info, images & links unified into dataES object.
 // ============================================================================
-
+import {
+  BedSingle,
+  Coffee,
+  Car,
+  ShowerHead,
+  Layers,
+  Sparkles,
+  ThermometerSun,
+  Tv,
+  Wifi,
+  HeartPulse,
+  Users,
+  X,
+} from "lucide-react"; // O la librería de iconos que uses
 export const dataES = {
   // ---------------------------------------------------------------------------
   //  1. Core hotel info (contact, social links, brand)
@@ -77,7 +90,7 @@ export const dataES = {
       secondaryCta: { label: "Explorar el Hotel", href: "#fotos" },
       scrollLabel: "Desplazar",
     },
-  
+
     about: {
       eyebrow: "Sobre Nosotros",
       title: "Un refugio clásico en una ciudad inolvidable",
@@ -94,7 +107,42 @@ export const dataES = {
         { value: "Excelente", label: "Atención" },
       ],
     },
-
+    photos_section: {
+      title: "Fotos" ,
+      subtitle: "Fotos del Hotel Turista",
+      photos: [
+        {
+          src: "/images/gallery-suite.png",
+          alt: "Sea-view suite with king bed",
+          span: "md:col-span-2 md:row-span-2",
+        },
+        {
+          src: "/images/gallery-terrace.png",
+          alt: "Terrace with string lights at dusk",
+          span: "",
+        },
+        {
+          src: "/images/gallery-bath.png",
+          alt: "Marble bathroom with freestanding tub",
+          span: "",
+        },
+        {
+          src: "/images/gallery-garden.png",
+          alt: "Lush garden courtyard",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/images/gallery-breakfast.png",
+          alt: "Breakfast on a sunny terrace",
+          span: "",
+        },
+        {
+          src: "/images/amenity-pool.png",
+          alt: "Infinity pool overlooking the sea",
+          span: "",
+        },
+      ],
+    },
     amenities: {
       eyebrow: "Servicios y Comodidades",
       title: "Todo lo que necesitas para tu estadía, pensado para vos",
@@ -118,14 +166,38 @@ export const dataES = {
           image: "/images/amenity-pool.png",
         },
       ],
-      services: [
-        { icon: "concierge", label: "Recepción y Atención" },
-        { icon: "wifi", label: "Wi-Fi Libre en todo el Hotel" },
-        { icon: "car", label: "Información Turística" },
-        { icon: "clock", label: "Atención de Reservas de 8 a 22hs" },
-        { icon: "dining", label: "Desayuno Incluido" },
-        { icon: "sparkles", label: "Servicio de Limpieza Diario" },
-      ],
+      services: {
+        services_cards_photos: [
+          {
+            title: "Habitaciones del Hotel",
+            description:
+              "Contamos con opciones singles, dobles, triples y cuádruples equipadas para garantizar un descanso óptimo y funcional.",
+            src: "/habitacion-hotel.png", // Recuerda cambiar las rutas de imágenes si es necesario
+          },
+          {
+            title: "Desayuno Buffet",
+            description:
+              "Comience su día con variedad de infusiones, panificados, frutas y opciones frescas en nuestro salón desayunador.",
+            src: "/desayuno-buffet.png",
+          },
+          {
+            title: "Estacionamiento",
+            description:
+              "Disponemos de espacio exclusivo para el vehículo de nuestros huéspedes durante toda su estadía.",
+            src: "/estacionamiento.png",
+          },
+        ],
+        services_cards: [
+          { icon: ShowerHead, label: "Baño Privado" },
+          { icon: Layers, label: "Blanquería Completa" },
+          { icon: Sparkles, label: "Servicio de Limpieza" },
+          { icon: ThermometerSun, label: "Calefacción / Ventilación" },
+          { icon: Tv, label: "TV por Cable" },
+          { icon: Wifi, label: "Internet Wi-Fi" },
+          { icon: HeartPulse, label: "Cobertura Médica 24 hs" },
+          { icon: Users, label: "Tarifas Especiales para Contingentes" },
+        ],
+      },
     },
 
     photos: {

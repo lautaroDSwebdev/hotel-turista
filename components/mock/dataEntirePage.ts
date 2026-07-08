@@ -1,7 +1,10 @@
 import { dataEN } from "./dataEN";
 import { dataES } from "./dataEs";
+import { dataPT } from "./dataPOR";
 
 export const dataPage = {
     es: dataES,
-    en: dataEN
+    en: dataEN,
+    po: dataPT,
+    al:dataEN
 }

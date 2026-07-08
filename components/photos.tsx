@@ -1,12 +1,13 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/all"
 import onKey from "./hooks/onKey"
+import { langCotext } from "./context/LangContext"
 
 const PHOTOS = [
   { src: "/images/gallery-suite.png", alt: "Sea-view suite with king bed", span: "md:col-span-2 md:row-span-2" },
@@ -18,6 +19,15 @@ const PHOTOS = [
 ]
 
 export function Photos() {
+
+
+    const info = useContext(langCotext);
+
+  if (!info) return null;
+
+
+  const {photos, title, subtitle} = info.data.CONTENT.photos_section
+
 const {active, setActive } =onKey()
 
 
@@ -49,14 +59,14 @@ const {active, setActive } =onKey()
     <section id="fotos" className="bg-background py-24 div_fotos">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">Fotos</p>
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">{title}</p>
           <h2 className="text-balance font-heading text-4xl leading-tight text-foreground md:text-5xl">
-            Fotos del Hotel Turista
+            {subtitle}
           </h2>
         </div>
 
         <div className="mt-14 grid auto-rows-[200px] grid-cols-2 gap-4 md:grid-cols-4 md:auto-rows-[220px] ">
-          {PHOTOS.map((photo, i) => (
+          {photos.map((photo, i) => (
             <button
               key={photo.src}
               type="button"
@@ -95,8 +105,8 @@ const {active, setActive } =onKey()
           </button>
           <div className="relative h-[80vh] w-full max-w-5xl">
             <Image
-              src={PHOTOS[active].src}
-              alt={PHOTOS[active].alt}
+              src={photos[active].src}
+              alt={photos[active].alt}
               fill
               className="object-contain"
               sizes="100vw"

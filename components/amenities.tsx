@@ -14,45 +14,52 @@ import {
   Users,
   X,
 } from "lucide-react"; // O la librería de iconos que uses
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import onKey from "./hooks/onKey";
+import { langCotext } from "./context/LangContext";
 
-const FEATURED = [
-  {
-    title: "Habitaciones del Hotel",
-    description:
-      "Contamos con opciones singles, dobles, triples y cuádruples equipadas para garantizar un descanso óptimo y funcional.",
-    src: "/habitacion-hotel.png", // Recuerda cambiar las rutas de imágenes si es necesario
-  },
-  {
-    title: "Desayuno Buffet",
-    description:
-      "Comience su día con variedad de infusiones, panificados, frutas y opciones frescas en nuestro salón desayunador.",
-    src: "/desayuno-buffet.png",
-  },
-  {
-    title: "Estacionamiento",
-    description:
-      "Disponemos de espacio exclusivo para el vehículo de nuestros huéspedes durante toda su estadía.",
-    src: "/estacionamiento.png",
-  },
-];
+// const services_cards_photos = [
+//   {
+//     title: "Habitaciones del Hotel",
+//     description:
+//       "Contamos con opciones singles, dobles, triples y cuádruples equipadas para garantizar un descanso óptimo y funcional.",
+//     src: "/habitacion-hotel.png", // Recuerda cambiar las rutas de imágenes si es necesario
+//   },
+//   {
+//     title: "Desayuno Buffet",
+//     description:
+//       "Comience su día con variedad de infusiones, panificados, frutas y opciones frescas en nuestro salón desayunador.",
+//     src: "/desayuno-buffet.png",
+//   },
+//   {
+//     title: "Estacionamiento",
+//     description:
+//       "Disponemos de espacio exclusivo para el vehículo de nuestros huéspedes durante toda su estadía.",
+//     src: "/estacionamiento.png",
+//   },
+// ];
 
-const SERVICES = [
-  { icon: ShowerHead, label: "Baño Privado" },
-  { icon: Layers, label: "Blanquería Completa" },
-  { icon: Sparkles, label: "Servicio de Limpieza" },
-  { icon: ThermometerSun, label: "Calefacción / Ventilación" },
-  { icon: Tv, label: "TV por Cable" },
-  { icon: Wifi, label: "Internet Wi-Fi" },
-  { icon: HeartPulse, label: "Cobertura Médica 24 hs" },
-  { icon: Users, label: "Tarifas Especiales para Contingentes" },
-];
+// const services_cards = [
+//   { icon: ShowerHead, label: "Baño Privado" },
+//   { icon: Layers, label: "Blanquería Completa" },
+//   { icon: Sparkles, label: "Servicio de Limpieza" },
+//   { icon: ThermometerSun, label: "Calefacción / Ventilación" },
+//   { icon: Tv, label: "TV por Cable" },
+//   { icon: Wifi, label: "Internet Wi-Fi" },
+//   { icon: HeartPulse, label: "Cobertura Médica 24 hs" },
+//   { icon: Users, label: "Tarifas Especiales para Contingentes" },
+// ];
 
 export function Amenities() {
+  const info = useContext(langCotext);
+
+  if (!info) return null;
+
+  const { services } = info.data.CONTENT.amenities;
+
   const { active, setActive } = onKey();
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -79,7 +86,10 @@ export function Amenities() {
     });
   }, []);
   return (
-    <section id="servicio-y-comodidades" className="bg-secondary py-24 div_comodidades">
+    <section
+      id="servicio-y-comodidades"
+      className="bg-secondary py-24 div_comodidades"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-accent-foreground/80">
@@ -92,7 +102,7 @@ export function Amenities() {
 
         {/* Tarjetas Destacadas */}
         <div className="mt-14 grid gap-8 md:grid-cols-3">
-          {FEATURED.map((item, e) => (
+          {services.services_cards_photos.map((item, e) => (
             <article
               key={item.title}
               className="group overflow-hidden rounded-sm border border-border bg-card shadow-sm transition-shadow hover:shadow-md"
@@ -139,8 +149,8 @@ export function Amenities() {
             </button>
             <div className="relative h-[80vh] w-full max-w-5xl">
               <Image
-                src={FEATURED[active].src}
-                alt={FEATURED[active].title}
+                src={services.services_cards_photos[active].src}
+                alt={services.services_cards_photos[active].title}
                 fill
                 className="object-contain"
                 sizes="100vw"
@@ -150,7 +160,7 @@ export function Amenities() {
         )}
         {/* Grilla de Servicios Generales */}
         <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {SERVICES.map(({ icon: Icon, label }) => (
+          {services.services_cards.map(({ icon: Icon, label }) => (
             <li
               key={label}
               className="flex flex-col items-center justify-center gap-3 rounded-sm border border-border bg-card px-4 py-6 text-center"

@@ -17,10 +17,12 @@ const HandleLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if(e.target.value === "es"){
         setlang("es")
         setdata(dataPage.es)
-    }else{
+    }else if(e.target.value === "en"){
         setlang("en")
         setdata(dataPage.en)
-
+    }else if(e.target.value === "po"){
+        setlang("po")
+        setdata(dataPage.po)
     }
  }
   return (

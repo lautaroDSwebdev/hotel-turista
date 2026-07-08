@@ -140,8 +140,8 @@ export function Navbar() {
                 <option value="en" className="text-slate-900">
                   EN
                 </option>
-                <option value="pt" className="text-slate-900">
-                  PT
+                <option value="po" className="text-slate-900">
+                  PO
                 </option>
               </select>
 

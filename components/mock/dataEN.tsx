@@ -2,6 +2,20 @@
 //  VERANA HOTEL — SINGLE SOURCE OF TRUTH (ENGLISH)
 //  All text, contact info, images & links unified into dataEN object.
 // ============================================================================
+import {
+  BedSingle,
+  Coffee,
+  Car,
+  ShowerHead,
+  Layers,
+  Sparkles,
+  ThermometerSun,
+  Tv,
+  Wifi,
+  HeartPulse,
+  Users,
+  X,
+} from "lucide-react"; // Or your preferred icon library
 
 export const dataEN = {
   // ---------------------------------------------------------------------------
@@ -29,13 +43,29 @@ export const dataEN = {
   //  2. Navigation links (label + anchor target)
   // ---------------------------------------------------------------------------
   NAV_LINKS: [
-    { label: "about us", title: "About Us", href: "sobre-nosotros" },
-    { label: "services & amenities", title: "Services and Amenities", href: "servicio-y-comodidades" },
+    {
+      label: "about us",
+      title: "About Us",
+      href: "sobre-nosotros",
+    },
+    {
+      label: "services & amenities",
+      title: "Services and Amenities",
+      href: "servicio-y-comodidades",
+    },
     { label: "photos", title: "Photos", href: "fotos" },
     { label: "location", title: "Location", href: "ubicacion" },
-    { label: "guestbook", title: "Guestbook", href: "libro-de-visitas" },
+    {
+      label: "guestbook",
+      title: "Guestbook",
+      href: "libro-de-visitas",
+    },
     { label: "inquiries", title: "Inquiries", href: "consultas" },
   ],
+
+  // ---------------------------------------------------------------------------
+  //  3. Images — every image path used on the site
+  // ---------------------------------------------------------------------------
 
   // ---------------------------------------------------------------------------
   //  4. Language switcher options
@@ -70,12 +100,49 @@ export const dataEN = {
       badge: { value: "Tradition", caption: "in Tandil hospitality" },
       paragraphs: [
         "Hotel Turista has welcomed travelers, families, and adventurers seeking a comfortable and relaxed stay in Tandil. Our hotel stands out for providing the essence of local hospitality combined with an unbeatable location.",
-        "Every corner is designed for your relaxation after a day exploring the hills. Enjoy regional gastronomy, the warmth of our team, and feel completely at home during your visit."
+        "Every corner is designed for your relaxation after a day exploring the hills. Enjoy regional gastronomy, the warmth of our team, and feel completely at home during your visit.",
       ],
       stats: [
         { value: "Tandil", label: "Central Location" },
         { value: "Comfortable", label: "Rooms" },
         { value: "Excellent", label: "Service" },
+      ],
+    },
+
+    photos_section: {
+      title: "Photos",
+      subtitle: "Photos of Hotel Turista",
+      photos: [
+        {
+          src: "/images/gallery-suite.png",
+          alt: "Sea-view suite with king bed",
+          span: "md:col-span-2 md:row-span-2",
+        },
+        {
+          src: "/images/gallery-terrace.png",
+          alt: "Terrace with string lights at dusk",
+          span: "",
+        },
+        {
+          src: "/images/gallery-bath.png",
+          alt: "Marble bathroom with freestanding tub",
+          span: "",
+        },
+        {
+          src: "/images/gallery-garden.png",
+          alt: "Lush garden courtyard",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/images/gallery-breakfast.png",
+          alt: "Breakfast on a sunny terrace",
+          span: "",
+        },
+        {
+          src: "/images/amenity-pool.png",
+          alt: "Infinity pool overlooking the sea",
+          span: "",
+        },
       ],
     },
 
@@ -102,48 +169,116 @@ export const dataEN = {
           image: "/images/amenity-pool.png",
         },
       ],
-      services: [
-        { icon: "concierge", label: "Front Desk & Service" },
-        { icon: "wifi", label: "Free Wi-Fi throughout the Hotel" },
-        { icon: "car", label: "Tourist Information" },
-        { icon: "clock", label: "Booking Assistance from 8 AM to 10 PM" },
-        { icon: "dining", label: "Breakfast Included" },
-        { icon: "sparkles", label: "Daily Housekeeping Service" },
-      ],
+      services: {
+        services_cards_photos: [
+          {
+            title: "Hotel Rooms",
+            description:
+              "We feature single, double, triple, and quadruple options fully equipped to guarantee an optimal and functional rest.",
+            src: "/habitacion-hotel.png",
+          },
+          {
+            title: "Buffet Breakfast",
+            description:
+              "Start your day with a variety of hot beverages, baked goods, fruits, and fresh choices in our dining hall.",
+            src: "/desayuno-buffet.png",
+          },
+          {
+            title: "Parking",
+            description:
+              "We provide an exclusive space for our guests' vehicles throughout their entire stay.",
+            src: "/estacionamiento.png",
+          },
+        ],
+        services_cards: [
+          { icon: ShowerHead, label: "Private Bathroom" },
+          { icon: Layers, label: "Full Linens Provided" },
+          { icon: Sparkles, label: "Housekeeping Service" },
+          { icon: ThermometerSun, label: "Heating / Ventilation" },
+          { icon: Tv, label: "Cable TV" },
+          { icon: Wifi, label: "Wi-Fi Internet" },
+          { icon: HeartPulse, label: "24-Hour Medical Coverage" },
+          { icon: Users, label: "Special Rates for Large Groups" },
+        ],
+      },
     },
 
     photos: {
       eyebrow: "Photos",
       title: "A glimpse into the experience at Hotel Turista",
       gallery: [
-        { src: "/images/gallery-suite.png", alt: "Comfortable double room", span: "md:col-span-2 md:row-span-2" },
-        { src: "/images/gallery-terrace.png", alt: "Dining area and hotel interior", span: "" },
-        { src: "/images/gallery-bath.png", alt: "Impeccable and equipped bathroom", span: "" },
-        { src: "/images/gallery-garden.png", alt: "Facade and hotel entrances", span: "md:col-span-2" },
-        { src: "/images/gallery-breakfast.png", alt: "Breakfast served in the morning", span: "" },
-        { src: "/images/amenity-pool.png", alt: "Details and warmth of our facilities", span: "" },
+        {
+          src: "/images/gallery-suite.png",
+          alt: "Comfortable double room",
+          span: "md:col-span-2 md:row-span-2",
+        },
+        {
+          src: "/images/gallery-terrace.png",
+          alt: "Dining area and hotel interior",
+          span: "",
+        },
+        {
+          src: "/images/gallery-bath.png",
+          alt: "Impeccable and equipped bathroom",
+          span: "",
+        },
+        {
+          src: "/images/gallery-garden.png",
+          alt: "Facade and hotel entrances",
+          span: "md:col-span-2",
+        },
+        {
+          src: "/images/gallery-breakfast.png",
+          alt: "Breakfast served in the morning",
+          span: "",
+        },
+        {
+          src: "/images/amenity-pool.png",
+          alt: "Details and warmth of our facilities",
+          span: "",
+        },
       ],
     },
 
     location: {
-      eyebrow: "Location",
-      title: "Find us in downtown Tandil",
+      title: "Location",
+      title1: "Find us in downtown Tandil",
       description:
         "Strategically located on 14 de Julio Street, our hotel allows you to easily access the commercial and gastronomic center as well as the main tourist landmarks in the city.",
-      mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.3405992391013!2d-59.13694439999999!3d-37.3344444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911f9b19e0df87%3A0x47c27265e00172ae!2sHotel%20Turista!5e0!3m2!1ses-419!2sar!4v1782344729111!5m2!1ses-419!2sar",
+      mapSrc:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.3405992391013!2d-59.13694439999999!3d-37.3344444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95911f9b19e0df87%3A0x47c27265e00172ae!2sHotel%20Turista!5e0!3m2!1ses-419!2sar!4v1782344729111!5m2!1ses-419!2sar",
       mapTitle: "Map showing the location of Hotel Turista Tandil",
       details: [
-        { icon: "pin", label: "Address", value: "14 de Julio 60 Tandil, Buenos Aires." },
-        { icon: "mail", label: "Email address", value: "hotelturistatandil@gmail.com", href: "mailto:hotelturistatandil@gmail.com" },
-        { icon: "phone", label: "Front Desk", value: "2494 110891", href: "tel:2494110891" },
-        { icon: "clock", label: "Booking hours", value: "From 8:00 AM to 10:00 PM" },
+        {
+          icon: "pin",
+          label: "Address",
+          value: "14 de Julio 60 Tandil, Buenos Aires.",
+        },
+        {
+          icon: "mail",
+          label: "Email address",
+          value: "hotelturistatandil@gmail.com",
+          href: "mailto:hotelturistatandil@gmail.com",
+        },
+        {
+          icon: "phone",
+          label: "Front Desk",
+          value: "2494 110891",
+          href: "tel:2494110891",
+        },
+        {
+          icon: "clock",
+          label: "Booking hours",
+          value: "From 8:00 AM to 10:00 PM",
+        },
       ],
     },
 
     guestbook: {
       eyebrow: "Guestbook",
       title: "Words from our guests",
-      subtitle: "Share a memory of your stay or read about the experience of other visitors.",
+      subtitle:
+        "Share a memory of your stay or read about the experience of other visitors.",
       form: {
         heading: "Sign the guestbook",
         namePlaceholder: "Your name",
@@ -178,8 +313,8 @@ export const dataEN = {
     },
 
     inquiries: {
-      eyebrow: "Inquiries",
-      title: "Start planning your stay",
+      title: "Inquiries",
+      title1: "Start planning your stay",
       description:
         "Send us your dates and preferences; our team will respond shortly to confirm availability and offer a tailored proposal.",
       whatsappPrompt: "Prefer to chat directly?",
@@ -194,7 +329,8 @@ export const dataEN = {
         checkOutLabel: "Check-out",
         guestsLabel: "Guests",
         messageLabel: "Message",
-        messagePlaceholder: "Tell us about your trip or any special requests…",
+        messagePlaceholder:
+          "Tell us about your trip or any special requests…",
         submitLabel: "Send Inquiry",
       },
       success: {
